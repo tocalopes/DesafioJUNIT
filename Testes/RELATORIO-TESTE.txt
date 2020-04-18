@@ -76,6 +76,20 @@ LOG: java.lang.Error: Unresolved compilation problem:
 RESOLUÇÃO
 	Para Corrigir o erro, defini os parâmetros como do tipo String
 	TRECHO DA CLASE => JulgamentoPrisioneiro: public int calculaPena(String respostaPrisioneiroA, String respostaPrisioneiroB) {
+
+2) TESTE
+
+ERRO:o método compara os parâmetros recebidos (que são do tipo string) com parametros do tipo resposta.
+
+LOG: java.lang.Error: Unresolved compilation problems: 
+	Resposta cannot be resolved to a variable
+	Resposta cannot be resolved to a variable
+	Resposta cannot be resolved to a variable
+
+
+
+
+
 	
 
 
