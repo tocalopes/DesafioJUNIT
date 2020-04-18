@@ -64,3 +64,15 @@ class TesteJulgamentoPrisioneiroTest {
 	}
 
 }
+
+
+1) TESTE
+
+ERRO: O método calculaPena da classe JulgamentoPrisioneiro não está recebendo parâmetro do tipo String, e sim de um tipo "Resposta".
+
+LOG: java.lang.Error: Unresolved compilation problem: 
+	The method calculaPena(String, String) is undefined for the type JulgamentoPrisioneiro
+
+
+
+
