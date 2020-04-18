@@ -131,6 +131,12 @@ CORREÇÃO: Foi corrido além da classeJulgamentoPrisioneiro um erro que havia c
 	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:510)
 	at TesteJulgamentoPrisioneiroTest.calculaPena3(TesteJulgamentoPrisioneiroTest.java:40)
 
+RESOLUÇÃO: troquei o retorno PENA_CONDENAÇÃO_INDIDUAL por PENA_CONDENAÇÃO_CUMPLICES
+
+     if (respostaPrisioneiroB == "Culpado") {
+                    return PENA_CONDENACAO_CUMPLICES;
+
+
 	
 
 
