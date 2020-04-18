@@ -1,0 +1,66 @@
+Nome: Gabriel Lopes Pontes RM: 81523
+
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class TesteJulgamentoPrisioneiroTest {
+	   
+   private int PENA_INOCENCIA = 0;
+   private int PENA_CONDENACAO_MUTUA = 5;
+   private int PENA_CONDENACAO_INDIVIDUAL = 10;
+   private int PENA_CONDENACAO_CUMPLICES = 1;
+
+	
+	@Test
+	public void calculaPena() {
+		JulgamentoPrisioneiro jp = new JulgamentoPrisioneiro();
+		String respostaPrisioneiroA = "Culpado";
+		String respostaPrisioneiroB = "Culpado";
+		int expected = PENA_INOCENCIA;
+		int actual = jp.calculaPena(respostaPrisioneiroA,respostaPrisioneiroB);
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	public void calculaPena1() {
+		JulgamentoPrisioneiro jp = new JulgamentoPrisioneiro();
+		String respostaPrisioneiroA = "Culpado";
+		String respostaPrisioneiroB = "Culpado";
+		int expected = PENA_INOCENCIA;
+		int actual = jp.calculaPena(respostaPrisioneiroA,respostaPrisioneiroB);
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	public void calculaPena2() {
+		JulgamentoPrisioneiro jp = new JulgamentoPrisioneiro();
+		String respostaPrisioneiroA = "Culpado";
+		String respostaPrisioneiroB = "bolo";
+		int expected = PENA_CONDENACAO_INDIVIDUAL;
+		int actual = jp.calculaPena(respostaPrisioneiroA,respostaPrisioneiroB);
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	public void calculaPena3() {
+		JulgamentoPrisioneiro jp = new JulgamentoPrisioneiro();
+		String respostaPrisioneiroA = "bolo";
+		String respostaPrisioneiroB = "Culpado";
+		int expected = PENA_CONDENACAO_CUMPLICES;
+		int actual = jp.calculaPena(respostaPrisioneiroA,respostaPrisioneiroB);
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	public void calculaPena4() {
+		JulgamentoPrisioneiro jp = new JulgamentoPrisioneiro();
+		String respostaPrisioneiroA = "bolo";
+		String respostaPrisioneiroB = "bolo";
+		int expected = PENA_INOCENCIA;
+		int actual = jp.calculaPena(respostaPrisioneiroA,respostaPrisioneiroB);
+		assertEquals(expected, actual);
+	}
+
+}
