@@ -73,6 +73,13 @@ ERRO: O método calculaPena da classe JulgamentoPrisioneiro não está recebendo
 LOG: java.lang.Error: Unresolved compilation problem: 
 	The method calculaPena(String, String) is undefined for the type JulgamentoPrisioneiro
 
+RESOLUÇÃO
+	Para Corrigir o erro, defini os parâmetros como do tipo String
+	TRECHO DA CLASE => JulgamentoPrisioneiro: public int calculaPena(String respostaPrisioneiroA, String respostaPrisioneiroB) {
+	
+
+
+
 
 
 
