@@ -11,24 +11,13 @@ class TesteJulgamentoPrisioneiroTest {
    private int PENA_CONDENACAO_MUTUA = 5;
    private int PENA_CONDENACAO_INDIVIDUAL = 10;
    private int PENA_CONDENACAO_CUMPLICES = 1;
-
-	
-	@Test
-	public void calculaPena() {
-		JulgamentoPrisioneiro jp = new JulgamentoPrisioneiro();
-		String respostaPrisioneiroA = "Culpado";
-		String respostaPrisioneiroB = "Culpado";
-		int expected = PENA_INOCENCIA;
-		int actual = jp.calculaPena(respostaPrisioneiroA,respostaPrisioneiroB);
-		assertEquals(expected, actual);
-	}
 	
 	@Test
 	public void calculaPena1() {
 		JulgamentoPrisioneiro jp = new JulgamentoPrisioneiro();
 		String respostaPrisioneiroA = "Culpado";
 		String respostaPrisioneiroB = "Culpado";
-		int expected = PENA_INOCENCIA;
+		int expected = PENA_CONDENACAO_MUTUA;
 		int actual = jp.calculaPena(respostaPrisioneiroA,respostaPrisioneiroB);
 		assertEquals(expected, actual);
 	}
@@ -64,6 +53,7 @@ class TesteJulgamentoPrisioneiroTest {
 	}
 
 }
+
 
 
 1) TESTE
@@ -103,7 +93,33 @@ LOG:org.opentest4j.AssertionFailedError: expected: <0> but was: <15>
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:147)
 	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:510)
 	at TesteJulgamentoPrisioneiroTest.calculaPena(TesteJulgamentoPrisioneiroTest.java:20)
+
+
+CORREÇÃO: Foi corrido além da classeJulgamentoPrisioneiro um erro que havia cometido no TesteJulgamento, havia criado
+	um método a mais, tive que excluilo.
 	
+	TRECHO EXCLUIDO "	@Test
+	public void calculaPena() {
+		JulgamentoPrisioneiro jp = new JulgamentoPrisioneiro();
+		String respostaPrisioneiroA = "Culpado";
+		String respostaPrisioneiroB = "Culpado";
+		int expected = PENA_INOCENCIA;
+		int actual = jp.calculaPena(respostaPrisioneiroA,respostaPrisioneiroB);
+		assertEquals(expected, actual);
+	}"
+	Além disso, foram modificados os valores das variaveis na classe julgamentoPrisioneiro, além de alguns dos retornos
+	do método calculaPena
+	TRECHOS =>    private int PENA_INOCENCIA = 0;
+  			 private int PENA_CONDENACAO_MUTUA = 5;
+  	 		private int PENA_CONDENACAO_INDIVIDUAL = 10;
+  			 private int PENA_CONDENACAO_CUMPLICES = 1;
+      return PENA_CONDENACAO_MUTUA;
+          } else {
+                 return PENA_CONDENACAO_INDIVIDUAL;
+                 }
+       }
+	
+
 
 
 
