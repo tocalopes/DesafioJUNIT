@@ -138,6 +138,18 @@ RESOLUÇÃO: troquei o retorno PENA_CONDENAÇÃO_INDIDUAL por PENA_CONDENAÇÃO_
 
 
 	
+5)eERRO:O ULTIMO método do JUNIT de teste espera receber 0(PENA_INOCENCIA) MAS RECEBEU 10( PENA_CONDENACAO_INDIVIDUAL)
+
+log:org.opentest4j.AssertionFailedError: expected: <0> but was: <10>
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:195)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:147)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:510)
+	at TesteJulgamentoPrisioneiroTest.calculaPena4(TesteJulgamentoPrisioneiroTest.java:50)
+
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209)
+
 
 
 
