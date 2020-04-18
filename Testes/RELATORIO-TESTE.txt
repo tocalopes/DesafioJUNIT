@@ -159,6 +159,90 @@ TRECHO:    } else {
                 }
 
 
+6)Versão final JUNIT
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class TesteJulgamentoPrisioneiroTest {
+	   
+   private int PENA_INOCENCIA = 0;
+   private int PENA_CONDENACAO_MUTUA = 5;
+   private int PENA_CONDENACAO_INDIVIDUAL = 10;
+   private int PENA_CONDENACAO_CUMPLICES = 1;
+
+	
+	@Test
+	public void calculaPena1() {
+		JulgamentoPrisioneiro jp = new JulgamentoPrisioneiro();
+		String respostaPrisioneiroA = "Culpado";
+		String respostaPrisioneiroB = "Culpado";
+		int expected = PENA_CONDENACAO_MUTUA;
+		int actual = jp.calculaPena(respostaPrisioneiroA,respostaPrisioneiroB);
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	public void calculaPena2() {
+		JulgamentoPrisioneiro jp = new JulgamentoPrisioneiro();
+		String respostaPrisioneiroA = "Culpado";
+		String respostaPrisioneiroB = "bolo";
+		int expected = PENA_CONDENACAO_INDIVIDUAL;
+		int actual = jp.calculaPena(respostaPrisioneiroA,respostaPrisioneiroB);
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	public void calculaPena3() {
+		JulgamentoPrisioneiro jp = new JulgamentoPrisioneiro();
+		String respostaPrisioneiroA = "bolo";
+		String respostaPrisioneiroB = "Culpado";
+		int expected = PENA_CONDENACAO_CUMPLICES;
+		int actual = jp.calculaPena(respostaPrisioneiroA,respostaPrisioneiroB);
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	public void calculaPena4() {
+		JulgamentoPrisioneiro jp = new JulgamentoPrisioneiro();
+		String respostaPrisioneiroA = "bolo";
+		String respostaPrisioneiroB = "bolo";
+		int expected = PENA_INOCENCIA;
+		int actual = jp.calculaPena(respostaPrisioneiroA,respostaPrisioneiroB);
+		assertEquals(expected, actual);
+	}
+
+}
+
+VERSÃO FINAL CLASSE JulgamentoPrisioneiro
+
+public class JulgamentoPrisioneiro {
+   private int PENA_INOCENCIA = 0;
+   private int PENA_CONDENACAO_MUTUA = 5;
+   private int PENA_CONDENACAO_INDIVIDUAL = 10;
+   private int PENA_CONDENACAO_CUMPLICES = 1;
+
+   public int calculaPena(String respostaPrisioneiroA, String respostaPrisioneiroB) {
+      if (respostaPrisioneiroA == "Culpado") {
+          if (respostaPrisioneiroB == "Culpado") {
+            return PENA_CONDENACAO_MUTUA;
+          } else {
+                 return PENA_CONDENACAO_INDIVIDUAL;
+                 }
+       } else {
+                if (respostaPrisioneiroB == "Culpado") {
+                    return PENA_CONDENACAO_CUMPLICES;
+                } else {
+                         return PENA_INOCENCIA;
+                        }
+                }
+     }
+}
+
+
+
+
 
 
 
