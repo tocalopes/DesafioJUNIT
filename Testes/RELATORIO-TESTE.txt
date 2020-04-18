@@ -92,6 +92,24 @@ RESOLUÇÃO : Substituição de todos os atributos da classe resposta pela strin
 								if (respostaPrisioneiroB == "Culpado") {
 
 
+3) TESTE
+
+ERRO: O primeiro teste deveria receber o valor 0(PENA_INOCENCIA), mas recebeu 15.
+
+LOG:org.opentest4j.AssertionFailedError: expected: <0> but was: <15>
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:195)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:147)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:510)
+	at TesteJulgamentoPrisioneiroTest.calculaPena(TesteJulgamentoPrisioneiroTest.java:20)
+	
+
+
+
+
+
+
 	
 
 
