@@ -151,8 +151,12 @@ log:org.opentest4j.AssertionFailedError: expected: <0> but was: <10>
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209)
 
 
+CORREÇÃO: TROCAR O ULTIMO retorno da clase JulgamentoPrisioneiro por PENA_INOSCENCIA
 
-
+TRECHO:    } else {
+                    return PENA_INOCENCIA;
+                        }
+                }
 
 
 
