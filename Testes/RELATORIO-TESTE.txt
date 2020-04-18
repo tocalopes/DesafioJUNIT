@@ -79,15 +79,17 @@ RESOLUÇÃO
 
 2) TESTE
 
-ERRO:o método compara os parâmetros recebidos (que são do tipo string) com parametros do tipo resposta.
+ERRO:o método compara os parâmetros recebidos (que são do tipo string) com o atributo DELAÇÃO de uma classe Resposta.
 
 LOG: java.lang.Error: Unresolved compilation problems: 
 	Resposta cannot be resolved to a variable
 	Resposta cannot be resolved to a variable
 	Resposta cannot be resolved to a variable
 
-
-
+RESOLUÇÃO : Substituição de todos os atributos da classe resposta pela string "Culpado"
+	TRECHOS DA CLASE => JulgamentoPrisioneiro:     if (respostaPrisioneiroA == "Culpado") {
+         						 if (respostaPrisioneiroB == "Culpado") {
+								if (respostaPrisioneiroB == "Culpado") {
 
 
 	
